@@ -7,7 +7,7 @@ cart.forEach((cartItem)=>{
     const productId=cartItem.productId
     const index = products.findIndex(product => product.id === productId);
     const product = products[index]
-    cartSummaryHTML+=`<div class="cart-item-container">
+    cartSummaryHTML+=`<div class="cart-item-container  js-cart-item-container-${productId}">
     <div class="delivery-date">
       Delivery date: Tuesday, June 21
     </div>

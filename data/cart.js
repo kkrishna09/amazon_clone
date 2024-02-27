@@ -33,6 +33,7 @@ export function removeFromCart(productId){
             newCart.push(cartItem)
         }
     })
-
     cart = newCart
+
+    document.querySelector(`.js-cart-item-container-${productId}`).remove()
 }
