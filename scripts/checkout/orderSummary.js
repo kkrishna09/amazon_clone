@@ -1,10 +1,10 @@
-import { cart, removeFromCart, saveToStorage, updateDeliveryOption } from "../data/cart.js";
-import { deliveryOptions } from "../data/deliveryOptions.js";
-import { products } from "../data/products.js";
+import { cart, removeFromCart, saveToStorage, updateDeliveryOption } from "../../data/cart.js";
+import { deliveryOptions } from "../../data/deliveryOptions.js";
+import { products } from "../../data/products.js";
 import { updateCartQuantity } from "../utils/cartQuantity.js";
 import { getDay } from "../utils/getDay.js";
 import { formatCurrency } from "../utils/money.js";
-function renderOrderSummary(){
+export function renderOrderSummary(){
   let cartSummaryHTML=''
   cart.forEach((cartItem)=>{
       const productId=cartItem.productId
@@ -127,5 +127,3 @@ function renderOrderSummary(){
     })
   })
 }
-
-renderOrderSummary()

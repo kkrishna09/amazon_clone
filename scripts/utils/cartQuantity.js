@@ -1,4 +1,4 @@
-import { cart } from "../data/cart.js";
+import { cart } from "../../data/cart.js";
 
 export function updateCartQuantity(classs){
     let cartQuantity=0
