@@ -54,3 +54,13 @@ export function getCartQuantity(productId){
     const value = document.querySelector(`.cart-quantity-${productId}`).value
     return parseInt(value)
 }
+
+
+export function updateDeliveryOption(productId,deliveryOptionId){
+    cart.forEach((cartItem)=>{
+        if (productId==cartItem.productId){
+        cartItem.deliveryOptionId=deliveryOptionId
+        }
+    })
+    saveToStorage()
+}
