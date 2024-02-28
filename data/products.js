@@ -1,3 +1,9 @@
+export function getProduct(productId){
+  const index = products.findIndex(product => product.id === productId);
+  const matchingProduct= products[index]
+  return matchingProduct
+}
+
 export const products = [
   {
     id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",

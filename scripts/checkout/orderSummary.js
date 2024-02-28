@@ -1,24 +1,22 @@
 import { cart, removeFromCart, saveToStorage, updateDeliveryOption } from "../../data/cart.js";
-import { deliveryOptions } from "../../data/deliveryOptions.js";
-import { products } from "../../data/products.js";
+import { deliveryOptions, getDeliveryOption } from "../../data/deliveryOptions.js";
+import { getProduct} from "../../data/products.js";
 import { updateCartQuantity } from "../utils/cartQuantity.js";
 import { getDay } from "../utils/getDay.js";
 import { formatCurrency } from "../utils/money.js";
 export function renderOrderSummary(){
   let cartSummaryHTML=''
+
   cart.forEach((cartItem)=>{
       const productId=cartItem.productId
-      const index = products.findIndex(product => product.id === productId);
-      const product = products[index]
-      let deliveryString;
-      deliveryOptions.forEach((option)=>{
-      if (option.id === cartItem.deliveryOptionId){
-        deliveryString=option.deliveryDays
-      }
-      })
+
+      const product=getProduct(productId)
+
+      const deliveryOption=getDeliveryOption(cartItem);
+
       cartSummaryHTML+=`<div class="cart-item-container  js-cart-item-container-${productId}">
       <div class="delivery-date">
-        Delivery date: ${getDay(deliveryString)}
+        Delivery date: ${getDay(deliveryOption.deliveryDays)}
       </div>
 
       <div class="cart-item-details-grid">
