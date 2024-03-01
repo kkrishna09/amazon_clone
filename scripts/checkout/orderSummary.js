@@ -4,6 +4,7 @@ import { getProduct} from "../../data/products.js";
 import { updateCartQuantity } from "../utils/cartQuantity.js";
 import { getDay } from "../utils/getDay.js";
 import { formatCurrency } from "../utils/money.js";
+import { renderPaymentSummary } from "./paymentSummary.js";
 export function renderOrderSummary(){
   let cartSummaryHTML=''
 
@@ -83,6 +84,7 @@ export function renderOrderSummary(){
           const productId=link.dataset.productId
           removeFromCart(productId)
           updateCartQuantity(".js-checkout")
+          renderPaymentSummary()
       })
   })
 
@@ -109,7 +111,8 @@ export function renderOrderSummary(){
                     item.quantity=parseInt(value)
                     updateCartQuantity(".js-checkout")
                     saveToStorage(cart)
-                    
+                    renderPaymentSummary()
+                    renderOrderSummary()
                   }
                 })
             });
@@ -122,6 +125,7 @@ export function renderOrderSummary(){
       const {productId,optionId}= element.dataset
       updateDeliveryOption(productId,optionId)
       renderOrderSummary()
+      renderPaymentSummary()
     })
   })
 }
