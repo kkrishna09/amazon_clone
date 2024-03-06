@@ -29,7 +29,7 @@ export function renderOrderSummary(){
             ${product.name}
           </div>
           <div class="product-price">
-            $${formatCurrency(product.priceCents)}
+            Rs ${formatCurrency(product.priceCents)}
           </div>
           <div class="product-quantity">
             <span>
@@ -56,7 +56,7 @@ export function renderOrderSummary(){
     let html=``
     deliveryOptions.forEach((option)=>{
       const dateString =getDay(option.deliveryDays)
-      const priceString= option.priceCents===0? "FREE": `$${formatCurrency(option.priceCents)} -`
+      const priceString= option.priceCents===0? "FREE": `Rs ${formatCurrency(option.priceCents)} -`
       const isChecked = option.id === cartItem.deliveryOptionId
       html+=`<div class="delivery-option js-delivery-option" data-product-id="${productId}" data-option-id="${option.id}">
       <input type="radio" ${isChecked?"checked":""}

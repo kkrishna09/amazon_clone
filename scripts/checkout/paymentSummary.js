@@ -27,27 +27,27 @@ export function renderPaymentSummary(){
 
     <div class="payment-summary-row">
         <div>Items (${totalCartQuantity}):</div>
-        <div class="payment-summary-money">$${formatCurrency(productPriceCents)}</div>
+        <div class="payment-summary-money">Rs ${formatCurrency(productPriceCents)}</div>
     </div>
 
     <div class="payment-summary-row">
         <div>Shipping &amp; handling:</div>
-        <div class="payment-summary-money">$${formatCurrency(ShippingPriceCents)}</div>
+        <div class="payment-summary-money">Rs ${formatCurrency(ShippingPriceCents)}</div>
     </div>
 
     <div class="payment-summary-row subtotal-row">
         <div>Total before tax:</div>
-        <div class="payment-summary-money">$${formatCurrency(totalBeforeTaxCent)}</div>
+        <div class="payment-summary-money">Rs ${formatCurrency(totalBeforeTaxCent)}</div>
     </div>
 
     <div class="payment-summary-row">
         <div>Estimated tax (10%):</div>
-        <div class="payment-summary-money">$${formatCurrency(taxCent)}</div>
+        <div class="payment-summary-money">Rs ${formatCurrency(taxCent)}</div>
     </div>
 
     <div class="payment-summary-row total-row">
         <div>Order total:</div>
-        <div class="payment-summary-money">$${formatCurrency(totalCent)}</div>
+        <div class="payment-summary-money">Rs ${formatCurrency(totalCent)}</div>
     </div>
 
     <button class="place-order-button button-primary">

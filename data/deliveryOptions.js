@@ -7,12 +7,12 @@ export const deliveryOptions=[
     {
     id:"2",
     deliveryDays:3,
-    priceCents:499
+    priceCents:10000
     },
     {
     id:"3",
     deliveryDays:1,
-    priceCents:999
+    priceCents:30000
     },
 ]
 export function getDeliveryOption(cartItem){
